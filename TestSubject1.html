@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veggies Market</title>
+  <style>
+    .navbar {
+      background-color: #ee8b8b;
+      overflow: hidden;
+      position: fixed;
+      align-items: center;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .navbar img{
+                height: 40px;
+                margin-right: 10px;
+            }
+
+            .navbar .brand{
+                color: red;
+                font-size: 24px;
+                font-weight: bold;
+                align-items: center;
+                text-decoration: none;
+            }
+
+    .navbar a {
+      float: right;
+      display: block;
+      color: rgb(77, 77, 77);
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: rgb(125, 194, 251);
+    }
+
+    body {
+      margin-top: 60px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .store-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 20px;
+                justify-content: center;
+            }
+
+            .item-card{
+                background-color: #faa4a4;
+                border: 2px solid #fabcbc;
+                border-radius: 10px;
+                width: 250px;
+                padding: 15px;
+                box-shadow: 0 0 15px rgba(119, 119, 119, 0.527);
+                transition: transform 0.3s;
+            }
+
+            .item-card:hover{
+                transform: scale(1.05);
+            }
+
+            .item-card img{
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            .item-name{
+                font-size: 20px;
+                font-weight: bold;
+                margin: 10px 0 15px;
+            }
+
+            .item-desc{
+                font-size: 14px;
+                color: #ccc;
+                margin-bottom: 10px;
+            }
+
+            .item-price{
+                color: #0f0;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .buy-button{
+                background-color: rgb(107, 107, 107);
+                color: white;
+                border: none;
+                padding: 10px;
+                width: 100%;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 0 0 10px rgb(118, 118, 118);
+              transition: background-color 0.3s ease;
+            }
+
+            .buy-button:hover{
+                background-color: darkred;
+            }
+
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    function createNavbar() {
+      const navbar = document.createElement("div");
+      navbar.className = "navbar";
+      navbar.innerHTML = `
+        <a href=#; class="brand">Veggis</a>
+
+        <img src="ds.png" alt"logo">
+
+        <a href="#contact">Contact Us</a>
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#home">Home</a>
+      `;
+      return navbar;
+    }
+
+    function createProfileSection() {
+      const profileSection = document.createElement("div");
+      profileSection.style.textAlign = "center";
+      profileSection.style.padding = "30px";
+      profileSection.style.borderRadius = "20px";
+      profileSection.style.maxWidth = "400px";
+      profileSection.style.margin = "30px auto";
+      profileSection.style.fontSize = "25px";
+      
+
+      profileSection.innerHTML = `
+        <img src="re.jpg" alt="Profile Picture" width="120px" height="120px" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <h2 style="margin: 15px 0 5px;">Twilight Devil</h2>
+        <p style="font-style: italic; color: #555;">The one who bends health and diet</p>
+      `;
+      return profileSection;
+    }
+
+    function createMainContent() {
+      const content = document.createElement("div");
+      content.style.padding = "20px";
+      content.innerHTML = `
+        
+        <h1 id="home" style="text-align:center; text-decoration:underline;">|--: Welcome to Veggies :--|</h1>
+
+        <div class="store-container">
+  <div class="item-card" data-category="Swords">
+    <img src="z.jpeg" alt="Shadow Blade">
+    <div class="item-name">Normal vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="y.jpeg" alt="Shadow Blade">
+    <div class="item-name">international vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$155</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="x.jpeg" alt="Shadow Blade">
+    <div class="item-name">avacado vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$135</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="w.jpeg" alt="Shadow Blade">
+    <div class="item-name">gym vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$105</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="v.jpeg" alt="Shadow Blade">
+    <div class="item-name">healty tasty vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="u.jpeg" alt="Shadow Blade">
+    <div class="item-name">protine vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="t.jpeg" alt="Shadow Blade">
+    <div class="item-name">spagetti</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="s.jpeg" alt="Shadow Blade">
+    <div class="item-name">high protien vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="r.jpeg" alt="Shadow Blade">
+    <div class="item-name">Normal vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="s.jpeg" alt="Shadow Blade">
+    <div class="item-name">Normal vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+
+   <div class="item-card" data-category="Swords">
+    <img src="z.jpeg" alt="Shadow Blade">
+    <div class="item-name">Normal vegitable salad</div>
+    <div class="item-desc">healty dite food </div>
+    <div class="item-price">$125</div>
+    <button class="buy-button">Buy</button>
+  </div>
+</div>
+
+        <p>If you actively look up your food ingredients... you’re not only a conscious but wise eater!</p>
+
+        <h2 id="schedule">What is a Vegetable Market?</h2>
+        <p>A vegetable market is a structure designed in various styles to sell vegetables and fruits.</p>
+
+        <h2 id="about">Importance of Vegetable Market</h2>
+        <p>Vegetables are vital to human health, providing essential nutrients and reducing risk of disease.</p>
+
+        <h2>Benefits of Vegetable Market</h2>
+        <p>Local vegetable markets give easy access to fresh produce and help local farmers.</p>
+
+        <h2 id="contact">Contact Us:</h2>
+        <p><b>Phone:</b> +91 1234567890</p>
+        <p><b>Email:</b> jgdifwu@gmail.com</p>
+      `;
+      return content;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.style.backgroundImage = "url('gdsa.jpg')";
+
+      const app = document.getElementById("app");
+      const navbar = createNavbar();
+      const profile = createProfileSection();
+      const content = createMainContent();
+
+      app.appendChild(navbar);
+      app.appendChild(profile);
+      app.appendChild(content);
+    });
+  </script>
+</body>
+</html>
